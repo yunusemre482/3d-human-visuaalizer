@@ -4,8 +4,7 @@ import { useLoader } from "@react-three/fiber";
 import { TextureLoader } from "three/src/loaders/TextureLoader";
 
 import variantStore from "../store";
-const MODEL_URL =
-  "https://raw.githubusercontent.com/yunusemre482/3d-human-visuaalizer/main/src/components/scene.glb";
+const MODEL_URL ="https://raw.githubusercontent.com/yunusemre482/assets/main/scene.glb";
 export default function Man({ selectedVariants, ...props }) {
   const group = useRef();
   const { nodes, materials, animations } = useGLTF(MODEL_URL);
@@ -15,7 +14,7 @@ export default function Man({ selectedVariants, ...props }) {
     selectedVariants["Ch17_Boots"].image ||
       "https://raw.githubusercontent.com/yunusemre482/assets/main/kahverengi.jpeg"
   );
-  console.log(materials);
+  console.log(selectedVariants);
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Scene">
